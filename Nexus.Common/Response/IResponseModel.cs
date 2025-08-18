@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Watan.Recruting.Common.Response
+namespace Nexus.Common.Response
 {
     public interface IResponseModel
     {
         ResponseModel Response(int StatusCode, string Message, dynamic Data);
     }
-
 
     public class ResponseModel : IResponseModel
     {
@@ -18,10 +17,15 @@ namespace Watan.Recruting.Common.Response
         public string Message { get; set; }
         public dynamic Data { get; set; }
 
-
-        ResponseModel IResponseModel.Response(int StatusCode, string Message, dynamic Data)
+        public ResponseModel Response(int statusCode, string message, dynamic data)
         {
-            return new ResponseModel { StatusCode = StatusCode, Data = Data, Message = Message };
+            return new ResponseModel
+            {
+                StatusCode = statusCode,
+                Message = message,
+                Data = data
+            };
         }
     }
 }
+

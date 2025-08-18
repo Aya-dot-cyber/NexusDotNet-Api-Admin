@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Watan.Recruting.Common.Response;
+using Nexus.Common.Response;
 
 namespace Nexus.Application.Interfaces
 {

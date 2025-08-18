@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Watan.Recruting.Common.Response;
+using Nexus.Common.Response;
 
 namespace Nexus.Application.Implementation
 {
@@ -28,7 +28,6 @@ namespace Nexus.Application.Implementation
         private readonly ILookupService? _lookupService;
         //private readonly IAppSettingService _appSettingService;
         private string? AdminUrl;
-        private ResponseModel? _responseModel;
         private readonly int? USERID;
         
         public UserService(Context context, IConfiguration config, IMapper mapper,
@@ -42,7 +41,6 @@ namespace Nexus.Application.Implementation
             //_appSettingService = appSettingService;
             //_httpContextAccessor = httpContextAccessor.CheckIsNullOrContextNull();
             USERID = _httpContextAccessor.HttpContext.User.GetUserId();
-            _responseModel = new ResponseModel();
             _lookupService = lookupService;
 
 
@@ -97,6 +95,11 @@ namespace Nexus.Application.Implementation
         }
 
         public Task<ResponseModel> ValidateOTP(OTPDto input, int langId)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<ResponseModel> IUserService.ValidateOTP(OTPDto input, int langId)
         {
             throw new NotImplementedException();
         }
